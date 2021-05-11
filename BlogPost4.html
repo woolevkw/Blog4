@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<html lang="en">
+<head>
+  <title>My Fourth Blog Post</title>
+  <meta name="description" content="My First Blog">
+  <meta name="keywords" content="html blog">
+  <link href="css/BlogPost1.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+  body {
+    background-color: #cccccc;
+  }
+</style>
+
+<body>
+  <div class="header">
+    <h1>How I created an Angular App using html, css, ts, and js.</h1>
+    <p style="font-size:25px;">Link to app here. http://kalebwoolever.com/Sample</p>
+    <p style="font-size:25px;">Link to source code here.</p>
+  </div>
+
+  <p>The last app I made was a React App. I used Angular for this final project instead of React again to both challenge myself by learning something new and also
+     broadening my overall back end development skillset. This application is called 'Hall of Heroes'. It is a basic Angular app that has its own tutorial on the
+     official Angular website. The app starts off by showing the user the most popular heroes. There is a search bar where the user can type to look up a specific
+     hero. They can also click on one of the heroes to look at their stats. A sashboard button is always available so the user can return to the main screen. There
+     is also a Heroes button that displays all of the heros available. The user can then add to the list or delete heroes if they so choose. In addition, there is
+     a text field below everything that reports to the user what has happened. The text box can be cleared at any given time with another button called 'Clear Messages'.
+     The hardest part for me personally just like last time was deploying the app. I really wanted to get this app on my website, but after hours and hours of searching
+     the web and watching videos on how to do it, I still could not figure it out. However, I did find another way to deploy it which I will get back to later.</p>
+
+  <h4>I will do my best to explain how I did this, but if you want a real tutorial, click the link I provided above.</h4>
+  <ul>
+      <li>First things first, I decided I wanted to crate the app locally using my Windows Command Prompt.
+      <ul>
+          <li>I simply created a new Angular app 'ng new angular-tour-of-heroes'.</li>
+          <li>I then opened the app in a browser (localhost: 4200).</li>
+      </ul>
+      </li>
+      <li>Next, I created a Heroes component by entering the command 'ng generate component heroes'.
+      <ul>
+          <li>This component is where we will store some hero information such as their names.</li>
+      </ul>
+      <li>I started modifying and adding to the code by setting up the component so it can be used for an unlimited number of heroes. It's like a template.</li>
+      <ul>
+          <li>There are going to be many more templates to make below.</li>
+      </ul>
+      <li>Now that we can have a hero component, the next step is to create a list to display all of the available heroes.</li>
+      <ul>
+          <li>Since there are going to be multiple heroes, it would be nice to display them all on the screen using lists.</li>
+      </ul>
+      <li>Using these lists, we will now be able to select the different heroes and see their different stats/traits.</li>
+      <ul>
+          <li>I used *ngFor to display the lise of heroes. I also toggled a CSS style class with a class binding.</li>
+      </ul>
+      <li>After that, the next thing I did was create a Feature Component.</li>
+      <ul>
+          <li>Similarly to the last component I created, this one will show all of the necessary details for each hero.</li>
+          <li>'ng generate component hero-detail'</li>
+      </ul>
+      <li>This component will contain a template that can be modified according to whatever trait a hero needs.</li>
+      <ul>
+          <li>Additionally, this new component is a child of the first Hero component I made earlier. I did this with property binding.</li>
+          <li>I also used the @Input decorator to make the hero property available for binding by the external Hero Component.</li>
+      </ul>
+      <li>Guess what time it is? Another component time!</li>
+      <ul>
+          <li>I created another componet called Service.</li>
+          <li>The app can run right now, but the information it displays is fake/old data. The service component will be able to get real time data and inject it into the other components.</li>
+      </ul>
+      <li>I do this by registering a provider. This provider is something that can create or deliver a service.</li>
+      <ul>
+          <li>When a service is provided at the root level, Angular crates a single instance that's shared of HeroService and it inject it into any class that asks for it.</li>
+      </ul>
+      <li>I then created two more components called 'MessageComponent' and 'MessageService'.</li>
+      <ul>
+          <li>With these components we are now able to communicate back and forth to share information about the Heroes.</li>
+      </ul>
+      <li>We are almost there, just a few things left!</li>
+      <li>We need to be able to navigate around the app and flip between pages to see different information about the Heroes.</li>
+      <ul>
+          <li>I did this with Navigation Routing.</li>
+      </ul>
+      <li>This will give us seperate dashboard and Hero pages to organize and sort information.</li>
+      <li>I used HTTPClient methods to do most of this.</li>
+      <li>Now that we have basic navigation, the last thing I attempted to inplement is gathering data from a server.</li>
+      <ul>
+          <li>The HeroService will get its data with HTTP requests.</li>
+          <li>With that, the users will be able to search for, add, edit, and delete heroes and save their changes via HTTP.</li>
+      </ul>
+      <li>I used HTTPClient methods to do most of this.</li>
+      <ul>
+          <li>I also created smaller methods so the user will be able to do the simple actions listed above. (add, edit, delete)</li>
+          <li>I put the search bar on the main dashboard page to make life easier for the user to find specific heroes.</li>
+      </ul>
+      <li>Now that the app is complete, I had to deploy it on my website. Again this part was very challenging for me because I couldn't find anything online on how to do it.</li>
+      <ul>
+          <li>Thankfully, my prof was able to point me in the right direction.</li>
+      </ul>
+      <li>I was able to build the application without any compile errors which was really good. My main issue was putting all the files from my computer onto my server.</li>
+      <ul>
+          <li>I had some files in the wrong locations in my directories so after a little bit of organizing, I was able to deploy the app on my personal website.</li>
+      </ul>
+
+      <p>And that is it Ladies and Gentleman! This Angular app was a little more difficult to make than my last one, but I still think anyone who has basic web knowledge can do this.</p>
+
+</body>
+</html>
